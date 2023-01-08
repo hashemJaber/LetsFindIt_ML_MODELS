@@ -202,6 +202,25 @@ def propagate(w, b, X, Y):
     
     return Y_prediction
 
+
+
+ NOTE:
+        IF YOUR ACCURACY FOR YOUR TRAINING MODEL IS WAY WAY HIGHER THAN 
+        THAT OF YOUR TEST AND CROSS-VALIDATION THEN YOU WILL MOST LIKELY FAIL
+        GLOBALIZATION 
+        IF THAT IS THE CASE AND SINCE THIS IS A IMAGE DON’T PLAY
+        WITH THE FEATURE VECTOR SINCE YOU ALREADY HAVE WHAT IS NEEDED
+        FROM FEATURES (RGB * H * W)
+        INSTEAD TRY TO PLAY WITH THE LEARNING RATE 
+        OR DECREASE THE NUMBER OF ITERATIONS 
+        OR TRY TO FIND MUCH, MUCH MORE DIVERSE DATA/IMAGES
+        TO REDCUE BIAS AND CALM OVERFITTING
+        NOT SURE IF REGULARIZATION IMPLEMENTATION WOULD WORK BUT 
+        TRY THAT AS WELL
+         
+        ALSO BEWARE OF EITHER HIGH VARIANCE OR HIGH BIAS.
+
+
 def model(X_train, Y_train, X_test, Y_test,X_cross_validation,Y_cross_validation, num_iterations=2000, learning_rate=0.5, print_cost=False):
     #AGAIN USE THE FUNCTION PROVIDED BY DR. ANDREW NG
     w=np.zeros([X_train.shape[0],1]);
@@ -223,21 +242,7 @@ def model(X_train, Y_train, X_test, Y_test,X_cross_validation,Y_cross_validation
         print(“cross-validation accuracy: {} %".format(100 - np.mean(np.abs(Y_prediction_cross_validation - Y_cross_validation)) * 100));
         
         """
-        NOTE:
-        IF YOUR ACCURACY FOR YOUR TRAINING MODEL IS WAY WAY HIGHER THAN 
-        THAT OF YOUR TEST AND CROSS-VALIDATION THEN YOU WILL MOST LIKELY FAIL
-        GLOBALIZATION 
-        IF THAT IS THE CASE AND SINCE THIS IS A IMAGE DON’T PLAY
-        WITH THE FEATURE VECTOR SINCE YOU ALREADY HAVE WHAT IS NEEDED
-        FROM FEATURES (RGB * H * W)
-        INSTEAD TRY TO PLAY WITH THE LEARNING RATE 
-        OR DECREASE THE NUMBER OF ITERATIONS 
-        OR TRY TO FIND MUCH, MUCH MORE DIVERSE DATA/IMAGES
-        TO REDCUE BIAS AND CALM OVERFITTING
-        NOT SURE IF REGULARIZATION IMPLEMENTATION WOULD WORK BUT 
-        TRY THAT AS WELL
-         
-        ALSO BEWARE OF EITHER HIGH VARIANCE OR HIGH BIAS.
+       
         """
     d = {"costs": costs,
          "Y_prediction_test": Y_prediction_test, 
