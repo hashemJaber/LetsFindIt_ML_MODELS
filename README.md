@@ -1,5 +1,5 @@
 # LetsFindIt_ML_MODELS
-This is all the ML models I will be using in my application, as soon as I have tested a model and get to a good performance level I will publish it here
+This is all the ML models I will be using in my application, as soon as I have tested a model and get to a good performance level I will publish it here, please be aware that I wont be adding the matured weights or bias, for trnasfer learning uses contact me at hashemjaber02@gmail.com
 #THIS IS THE LOGISTIC MODEL PROTOTYPE I WILL BE USING FOR LetsFindIt
 #image recognition model, it will be later on  updated to a softmax 
 #algorithm for my multi-classification model
