@@ -50,8 +50,7 @@ test_set_x = test_set_x_flatten / 255.
 
 #FOR OTHER NORMALIZATION FORMULAS VISIT 
 #https://learn.microsoft.com/en-us/azure/machine-learning/component-reference/normalize-data
-#DONT WORRY THEY PROVIDE THE MATH FOR IT AS WELL  AND NOT LIMITED TO
-# Azure Machine Learning designer
+#DONT WORRY THEY PROVIDE THE MATH FOR IT AS WELL  AND NOT LIMITED TO AZURE MACHINE LEARNING DESIGENR
 
 #THIRD: THE SIGMOID FUNCTION aka activation function:
 #THIS IS WHERE OUR HYPOTHESIS Z WILL GO TO SEE THE PERCENTAGE 
@@ -63,10 +62,7 @@ def sigmoid(z):
 
 
 
-#THE FOLLOWING FUNCTION IS TAKEN FROM ANDREW NG FOR INITIALIZING VALUES
-#OF WEIGHTS AND BIAS, YOU CAN DO IT YOURSELF BUT THIS 
-#WILL REDUCE HOURS OF FRUSTRATING DIMENSION ERRORS FOR YOUR 
-#VECTORS FOR THE WEIGHTS, BELIEVE ME, AND TAKE MY WORD ON IT
+#THE FOLLOWING FUNCTION IS TAKEN FROM ANDREW NG FOR INITIALIZING VALUES OF WEIGHTS AND BIAS, YOU CAN DO IT YOURSELF BUT THIS WILL REDUCE HOURS OF FRUSTRATING DIMENSION ERRORS FOR YOUR VECTORS FOR THE WEIGHTS, BELIEVE ME, AND TAKE MY WORD ON IT
 def initialize_with_zeros(dim):
     """
     This function creates a vector of zeros of shape (dim, 1) for w and initializes b to 0.
@@ -79,9 +75,6 @@ def initialize_with_zeros(dim):
     b -- initialized scalar (corresponds to the bias) of type float
     """
     
-    # (≈ 2 lines of code)
-    # w = ...
-    # b = ...
 
     w=np.zeros((dim,1));
     b=0.0;
@@ -102,29 +95,27 @@ def propagate(w, b, X, Y):
     cost=0;
     
     A=np.zeros([n,1]);
-   # print(A);
-   # print(X);
-   # print(w);
-   # print(Y);
+   """
+   JUST HAVE THEM AS AN OPTION TO UNDERSTAND THE STRUCTURE OF YOUR DATA  
+    print(A);
+    print(X);
+    print(w);
+    print(Y);"""
    
-    #A if for PROBABILITY OF EXAMPLE i BEING 0(FALSE) OR 1(TRUE) OF BEING 
-    #THE DESIRED OUTPUT    
+    #A IS FOR PROBABILITY OF EXAMPLE i BEING 0(FALSE) OR 1(TRUE) OF BEING THE DESIRED OUTPUT    
 
 
     A=sigmoid(np.dot(w.T,X)+b); 
-    #YES THE LOSS IS IN NEGATIVE, NO WE DONT USE MEAN SQUEARD ERROR WE USE LOG,
-    #HENCE THE NAME THE LOGESTICE REGRESSION MODEL, IF YOU ARE THINKING ABOUT MSE THEN YOU MOST LIKELY ARE LOOKING FOR 
-    #A LINEAR REGRESSION MODEL
+    #YES THE LOSS IS IN NEGATIVE, NO WE DONT USE MEAN SQUEARD ERROR WE USE LOG,HENCE THE NAME THE LOGESTICE REGRESSION MODEL, IF YOU ARE THINKING ABOUT MSE THEN YOU MOST LIKELY ARE LOOKING FOR A LINEAR REGRESSION MODEL
     cost = -1/m * (np.dot(Y,np.log(A).T) + np.dot((1-Y),np.log(1 - A).T)) 
 
-    #print("X is what ?, its this : "+str(X));  
-    #print("w is what ?, its this : "+str(w)); 
-    #dw means derivative of cost/loss with respect of w
+    """print("X is what ?, its this : "+str(X)); """ 
+    """print("w is what ?, its this : "+str(w)); """
+    """dw means derivative of cost/loss with respect of w"""
     dw=(1/m)*(np.dot(X,(A - Y).T));
-    #db means derivative of cost/loss with respect of b
+    """db means derivative of cost/loss with respect of b"""
     db=(1/m)*np.sum(A-Y);
-    #USE THIS, I HAVE SOMETHING WRONG WITH MY CODE WHICH THIS HELPS TO 
-    #FIX FOR SOME ODD REASON
+    #USE THIS, I HAVE SOMETHING WRONG WITH MY CODE WHICH THIS HELPS TO FIX FOR SOME ODD REASON
     cost = np.squeeze(np.array(cost))
     
     
@@ -181,11 +172,12 @@ def propagate(w, b, X, Y):
     
     return params, grads, costs  
 
+    #USE THE FUNCTION THAT DR. ANDREW NG MADE, IGNORE THIS.
+    #THIS WILL WORK BUT IF YOUR FORMATE IS STILL IN .JPG FLATTEND
  def predict(w, b, X):
     
     Y_prediction = np.zeros((1, X.shape[1]))
-    #USE THE FUNCTION THAT ANDREW NG MADE, IGNORE THIS.
-    #THIS WILL WORK BUT IF YOUR FORMATE IS STILL IN .JPG FLATTEND
+  
     w = w.reshape(X.shape[0], 1)
     
 
@@ -240,7 +232,7 @@ def model(X_train, Y_train, X_test, Y_test,X_cross_validation,Y_cross_validation
         print("test accuracy: {} %".format(100 - np.mean(np.abs(Y_prediction_test - Y_test)) * 100));
         #ACCURACY FOR THE CROSS VALIDATION 
         print(“cross-validation accuracy: {} %".format(100 - np.mean(np.abs(Y_prediction_cross_validation - Y_cross_validation)) * 100));
-        
+        #BEST IF YOU ALSO HAD THE TRUE POSTIVE, FALSE POSITTIVES, TRUE NEGATIVES, AND FALSE NEGATIVES FOR A BETTER AUDITING EXPERIENCE
         """
        
         """
