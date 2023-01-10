@@ -174,7 +174,10 @@ def propagate(w, b, X, Y):
 
     #USE THE FUNCTION THAT DR. ANDREW NG MADE, IGNORE THIS.
     #THIS WILL WORK BUT IF YOUR FORMATE IS STILL IN .JPG FLATTEND
- def predict(w, b, X):
+    """
+    Playing with the epsilon can actually sometimes improve your classification, but keep in mind that when it comes to generalizibilty there is a highly likely chance of failure
+    """
+ def predict(w, b, X,epsilon=0.5):
     
     Y_prediction = np.zeros((1, X.shape[1]))
   
@@ -187,7 +190,7 @@ def propagate(w, b, X, Y):
     #A=sigmoid(np.dot(X,w.T)+b);----THIS Dosnt work why ? 
  
     for i in range(m):
-            if(A[0][i]>0.5):
+            if(A[0][i]>epsilon):
                 Y_prediction[0][i]=1;
             else :
                 Y_prediction[0][i]=0;
@@ -199,7 +202,7 @@ def propagate(w, b, X, Y):
  NOTE:
         IF YOUR ACCURACY FOR YOUR TRAINING MODEL IS WAY WAY HIGHER THAN 
         THAT OF YOUR TEST AND CROSS-VALIDATION THEN YOU WILL MOST LIKELY FAIL
-        GLOBALIZATION 
+        GLOBALIZATION/GENARALIZIBILTY 
         IF THAT IS THE CASE AND SINCE THIS IS A IMAGE DON’T PLAY
         WITH THE FEATURE VECTOR SINCE YOU ALREADY HAVE WHAT IS NEEDED
         FROM FEATURES (RGB * H * W)
@@ -256,3 +259,4 @@ plt.ylabel('cost')
 plt.xlabel('iterations (per hundreds)')
 plt.title("Learning rate =" + str(logistic_regression_model["learning_rate"]))
 plt.show()      
+
