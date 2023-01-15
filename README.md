@@ -260,3 +260,11 @@ plt.xlabel('iterations (per hundreds)')
 plt.title("Learning rate =" + str(logistic_regression_model["learning_rate"]))
 plt.show()      
 
+
+#As I was working on a Shallow Neural network the idea came to me to write this function to ease my life as I alwayse manage to screw up my dimentions successfully, I might change this to a class and add a activiation function to it as well, till then this is tested and it works though, any other ideas will be posted with the next model I will be building.
+def layer_initilizer(number_of_nuerons=1,number_of_inputs=1):
+    
+    return np.random.randn(number_of_nuerons,number_of_inputs)*0.01;
+    
+    
+
