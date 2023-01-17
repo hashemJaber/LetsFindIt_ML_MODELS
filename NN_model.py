@@ -1,3 +1,9 @@
+"""
+Finally I can write the .py files in my desktop, regardless I will be adding my notes on this later on, this is simply a solution to one of 
+Dr. Andrew NG problems on the Deep Learning specialization course, although this problem in theory does reflect how a CNN will look like but 
+this is simply a shallow neural network with one hidden layer, regardless I will add my comments on this later on
+"""
+
 
 import numpy as np
 import copy
