@@ -197,28 +197,31 @@ def update_parameters(params, grads, learning_rate):
 print("I will creat a class from all of these functions and strap them together, building something like my own library or class");
 
 class DNN:
-  def __init__(self, learning_rate, Lambda,X,Y,layer_dims,epochs=2500,activation_id=[2,2,4]):
+  def __init__(self, learning_rate, Lambda,X,Y,layer_dims,epochs=2500,activations=
+  
+  np.array(["relu","relu","relu","sigmoid"])   ):
     self.learning_rate = learning_rate
     self.Lambda = Lambda
     self.X=X
     self.Y=Y
     self.layer_dims=layer_dims
+    self.epochs=epochs
+    self.activations=activations
+    assert(layer_dims.shape[0]==activations.shape[0])
     
 
-dnn_1 = DNN(0.001,0.0001,np.array([
+dnn_1 = DNN(0.001,0.0001,X=np.array([
 [1,2,3,4],
 [5,6,7,8],
 [9,10,11,12]
 ]),
-np.array([1,1,0]
+Y=np.array([1,1,0]
 
 ),
 
-np.array([2,3,4  ]   ))
+layer_dims=np.array([2,3,4]   ))
     
 
 
 
-print(dnn_1.X.shape);
-
-
+print(str(dnn_1.activations));
