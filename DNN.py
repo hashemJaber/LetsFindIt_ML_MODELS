@@ -234,5 +234,5 @@ layer_dims=np.array([2,3,4]   ))
 
 print(str(dnn_1.activations));
 #to do : add a L2 or L1 regulriazation method
-#to do : add a dropout tool for every layer
+#to do : add a dropout hyperparameter tool for every layer
 #to do: add a Adam optimization and minibatching hyper parameters
