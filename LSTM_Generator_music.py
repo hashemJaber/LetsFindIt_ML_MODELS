@@ -1,4 +1,4 @@
-# This is the work I did for the transformer assingment in the Deep Learning Specialization course of the Transformer Network Lab
+# This is the work I did for the LSTM of music generator assingment in the Deep Learning Specialization course of the Transformer Network Lab
 
 import tensorflow as tf
 import time
