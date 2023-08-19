@@ -1,4 +1,4 @@
-# This is the work I did for the transformer assingment in the Deep Learning Specialization course of the Transformer Network Lab
+# This is the work I did for the sentiment text assingment in the Deep Learning Specialization course of the emojify Network Lab
 import numpy as np
 from emo_utils import *
 import emoji
